@@ -6,6 +6,18 @@ body {
   flex-direction: column;
 }
 
+nav {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #535bf2;
+}
+
 #root {
   width: 100%;
   height: 100%;
@@ -22,8 +34,13 @@ li {
 }
 
 .mail-box {
-  border: 2px solid white;
+  border: 2px solid #333abc;
   padding: 20px;
+}
+
+.mail-box a {
+  text-decoration: none;
+  color: inherit;
 }
 
 form {

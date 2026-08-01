@@ -12,14 +12,14 @@ const [mailboxData , setMailboxeData] = useState(initialState)
 const navigate = useNavigate()
 
 // so now we can see any change we make in the form
-const handelChange = () => {
+const handelChange = (event) => {
     setMailboxeData({
         ...mailboxData,
         [event.target.name]: event.target.value,
     })
 }
 
-const handelSubmit = () => {
+const handelSubmit = (event) => {
     event.preventDefault()
     props.addbox(mailboxData)
     setMailboxeData(initialState)
