@@ -11,12 +11,19 @@ const MailboxForm = (props) => {
 const [mailboxData , setMailboxeData] = useState(initialState)
 const navigate = useNavigate()
 
-const handelSubmit = () => {
-
+// so now we can see any change we make in the form
+const handelChange = () => {
+    setMailboxeData({
+        ...mailboxData,
+        [event.target.name]: event.target.value,
+    })
 }
 
-const handelChange = () => {
-
+const handelSubmit = () => {
+    event.preventDefault()
+    props.addbox(mailboxData)
+    setMailboxeData(initialState)
+    navigate('/mailboxes')
 }
 
     return(

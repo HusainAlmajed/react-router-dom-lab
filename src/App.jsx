@@ -21,13 +21,12 @@ const addbox = (mailboxData) => {
   return (
     <>
       <NavBar />
-      <h1>Hello world!</h1>
 
     <Routes>
 
       <Route path="/" element={<h2>Welcome to MailBox</h2>} />
 
-      <Route path="/mailboxes" element={<MailboxList />} />
+      <Route path="/mailboxes" element={<MailboxList mailboxes={mailboxes} />} />
 
       <Route path="/new-mailbox" element={<MailboxForm addbox={addbox}/>} />
 
