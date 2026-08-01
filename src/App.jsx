@@ -4,9 +4,19 @@ import { Route , Routes } from "react-router";
 import NavBar from "./components/NavBar/NavBar";
 import MailboxForm from "./components/MailboxForm/MailboxForm"
 import MailboxList from "./components/MailboxList/MailboxList"
-// import MailboxDetails from "./components/MailboxDetails/MailboxDetails"
+import MailboxDetails from "./components/MailboxDetails/MailboxDetails";
 
 const App = () => {
+
+const [mailboxes , setMailboxes] = useState([])
+
+const addbox = (mailboxData) => {
+  const newMailbox = {
+    ...mailboxData,
+    _id: mailboxes.length + 1,
+  }
+  setMailboxes([...mailboxes , newMailbox])
+}
 
   return (
     <>
@@ -19,7 +29,9 @@ const App = () => {
 
       <Route path="/mailboxes" element={<MailboxList />} />
 
-      <Route path="/new-mailbox" element={<MailboxForm />} />
+      <Route path="/new-mailbox" element={<MailboxForm addbox={addbox}/>} />
+
+      <Route path="/mailboxes/:mailboxId" element={<MailboxDetails />} />
 
     </Routes>
     
